@@ -1,0 +1,95 @@
+spring:
+    profiles:
+        active: dev
+    datasource:
+        driver-class-name: org.h2.Driver
+        password: admin
+        url: jdbc:h2:mem:bank
+        username: admin
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+---
+spring:
+    config:
+        activate:
+            on-profile: "dev"
+    h2:
+        console:
+            enabled: true
+    security:
+        user:
+            name: admin
+            password: $2a$12$1YCqwe1xWxgubxYdDSfBw.gjnjTd6SrZav.U5503LbcXknl5k6/ve
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+    sql:
+        init:
+            mode: always
+---
+spring:
+    config:
+        activate:
+            on-profile: "qa"
+    h2:
+        console:
+            enabled: true
+    security:
+        user:
+            name: admin
+            password: $2a$12$1YCqwe1xWxgubxYdDSfBw.gjnjTd6SrZav.U5503LbcXknl5k6/ve
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+    sql:
+        init:
+            mode: always
+---
+spring:
+    config:
+        activate:
+            on-profile: "test"
+    h2:
+        console:
+            enabled: true
+    security:
+        user:
+            name: admin
+            password: $2a$12$1YCqwe1xWxgubxYdDSfBw.gjnjTd6SrZav.U5503LbcXknl5k6/ve
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+    sql:
+        init:
+            mode: always
+---
+spring:
+    config:
+        activate:
+            on-profile: "uat"
+    h2:
+        console:
+            enabled: true
+    security:
+        user:
+            name: admin
+            password: $2a$12$1YCqwe1xWxgubxYdDSfBw.gjnjTd6SrZav.U5503LbcXknl5k6/ve
+    jpa:
+        hibernate:
+            ddl-auto: validate
+---
+spring:
+    config:
+        activate:
+            on-profile: "prod"
+    h2:
+        console:
+            enabled: false
+    security:
+        user:
+            name: admin
+            password: $2a$12$1YCqwe1xWxgubxYdDSfBw.gjnjTd6SrZav.U5503LbcXknl5k6/ve
+    jpa:
+        hibernate:
+            ddl-auto: none
+---

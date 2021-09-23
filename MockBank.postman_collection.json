@@ -1,0 +1,498 @@
+{
+	"info": {
+		"_postman_id": "c08e5003-c399-4e01-9246-0c4313e1cd81",
+		"name": "MockBank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Create Customer - Success",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"vinny.test1@gmail.com\",\n    \"firstName\": \"Vinny\",\n    \"lastName\": \"yarl\",\n    \"password\": \"g&!7nNaY\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/mockbank/v1/customer/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mockbank",
+								"v1",
+								"customer",
+								"create"
+							]
+						},
+						"description": "http://localhost:8080/mockbank/v1/customer/create"
+					},
+					"response": []
+				},
+				{
+					"name": "Create Customer - failed Spring Authetication",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "passwordd",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"vinny.test1@gmail.com\",\n    \"firstName\": \"Vinny\",\n    \"lastName\": \"yarl\",\n    \"password\": \"g&!7nNaY\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/mockbank/v1/customer/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mockbank",
+								"v1",
+								"customer",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all customers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/mockbank/v1/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mockbank",
+								"v1",
+								"customers"
+							]
+						},
+						"description": "http://localhost:8080/mockbank/v1/customers"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Customer by Customer Number",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/mockbank/v1/customers/e3ee48f4-742b-4136-879e-896e533f453f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mockbank",
+								"v1",
+								"customers",
+								"e3ee48f4-742b-4136-879e-896e533f453f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer Details",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerNumber\": \"1a4bb377-a16e-46ac-a5d2-bd66e4caba73\",\n    \"firstName\": \"Venkat\",\n    \"lastName\": \"Yarlagadda\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/mockbank/v1/customers/57a45d34-2512-41ce-bab8-573bcdffb09d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mockbank",
+								"v1",
+								"customers",
+								"57a45d34-2512-41ce-bab8-573bcdffb09d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Get Customer Accounts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/mockbank/v1/customers/a21034d3-0ef1-4374-82d2-e514e30f19ca/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mockbank",
+								"v1",
+								"customers",
+								"a21034d3-0ef1-4374-82d2-e514e30f19ca",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Customer Account",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": \"12356.34\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/mockbank/v1/customers/a21034d3-0ef1-4374-82d2-e514e30f19ca/account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mockbank",
+								"v1",
+								"customers",
+								"a21034d3-0ef1-4374-82d2-e514e30f19ca",
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete account",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/mockbank/v1/customers/a21034d3-0ef1-4374-82d2-e514e30f19ca/accounts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mockbank",
+								"v1",
+								"customers",
+								"a21034d3-0ef1-4374-82d2-e514e30f19ca",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deposit into account",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": \".24\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/mockbank/v1/customers/a21034d3-0ef1-4374-82d2-e514e30f19ca/account/bc89fe73-10a3-415e-a60f-c26402273c8a/deposit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mockbank",
+								"v1",
+								"customers",
+								"a21034d3-0ef1-4374-82d2-e514e30f19ca",
+								"account",
+								"bc89fe73-10a3-415e-a60f-c26402273c8a",
+								"deposit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Withdraw from account",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "password",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\": \"123.24\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/mockbank/v1/customers/a21034d3-0ef1-4374-82d2-e514e30f19ca/account/bc89fe73-10a3-415e-a60f-c26402273c8a/withdraw",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mockbank",
+								"v1",
+								"customers",
+								"a21034d3-0ef1-4374-82d2-e514e30f19ca",
+								"account",
+								"bc89fe73-10a3-415e-a60f-c26402273c8a",
+								"withdraw"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
